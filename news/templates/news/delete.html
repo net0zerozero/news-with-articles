@@ -1,0 +1,15 @@
+{% extends 'myapp/layout.html' %}
+
+{% block title %}Удаление статьи{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Удаление статьи</h1>
+        <form method="post">
+            {% csrf_token %}
+            <span>{{ error }}</span>
+            <button class="button-about" type="submit">Удалить статью</button>
+            <a href="{% url 'news-detail' article.id %}" class="button-about">Назад</a>
+        </form>
+    </div>
+{% endblock %} 
